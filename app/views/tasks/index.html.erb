@@ -10,6 +10,10 @@
           <i class="fa fa-square"></i>
         <% end %>
         <%=link_to task.title, task_path(task.id)%>
+        .
+        <%= link_to task_path(task.id), method: :delete, data: { confirm: "Delete #{task.title}?" } do %>
+          <i class="fa fa-trash-o" aria-hidden="true"></i>
+        <% end %>
       </li>
     <%end%>
   </ul>
